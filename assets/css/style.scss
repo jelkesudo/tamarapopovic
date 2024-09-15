@@ -24,6 +24,10 @@ a{
   color: black;
 }
 
+ul{
+  list-style-type: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   background: transparent; 
@@ -37,7 +41,117 @@ a{
 ::-webkit-scrollbar-thumb:hover {
   background: #aaa; 
 }
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 9;
 
+  .inner-header {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav#nav-menu { 
+      width: 30%;
+
+      ul {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        li {
+          background-color: $bojaSajta;
+          border: none;
+          margin: 0px 10px;
+          padding: 5px 20px;
+          border-radius: 20px;
+          font-weight: bold;
+          transition: 0.5s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(78, 96, 121);
+            color: $white;
+          }
+        }
+      }
+
+      #close-nav {
+        position: absolute;
+        display: none;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 770px) {
+        #close-nav {
+          display: block;
+        }
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 250px;
+        background: #f7a06e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        #close-nav{
+          position: absolute;
+        }
+        ul {
+          flex-direction: column;
+          text-align: center;
+
+          li {
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        &.active {
+          right: 0;
+        }
+      }
+    }
+
+    #hamburger-menu {  // Updated hamburger selector with id
+      display: none;
+      cursor: pointer;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      @media screen and (max-width: 770px) {
+        display: block;
+      }
+    }
+  }
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 8; 
+  display: none; 
+  transition: opacity 0.3s ease-in-out;
+}
+#overlay.active {
+  display: block;
+}
 main{
   .big-wallpaper{
     width: 100%;
@@ -48,19 +162,6 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    .tam-logo{
-      position: absolute;
-      top: 60px;
-      left: 60px;
-      width: 100px;
-      height: 100px;
-      color: orange;
-      a{
-        img{
-          width: 100%;
-        }
-      }
-    }
     .big-wallpaper-div{
       width: 50%;
       text-align: center;
@@ -99,20 +200,10 @@ main{
   }
 }
 
+
+
 @media screen and (max-width: 430px) {
   .big-wallpaper{
-    .tam-logo{
-      position: absolute;
-      top: 20px !important;
-      left: 20px !important;
-      width: 50px !important;
-      height: 50px !important;
-      a{
-        img{
-          width: 100%;
-        }
-      }
-    }
     .big-wallpaper-div{
       width: 100% !important;
       text-align: center;

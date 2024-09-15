@@ -20,6 +20,10 @@ a {
   color: black;
 }
 
+ul {
+  list-style-type: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   background: transparent;
@@ -34,6 +38,112 @@ a {
   background: #aaa;
 }
 
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+}
+header .inner-header {
+  width: 80%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .inner-header nav#nav-menu {
+  width: 30%;
+}
+header .inner-header nav#nav-menu ul {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+header .inner-header nav#nav-menu ul li {
+  background-color: rgb(147, 168, 197);
+  border: none;
+  margin: 0px 10px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+header .inner-header nav#nav-menu ul li:hover {
+  background-color: rgb(78, 96, 121);
+  color: white;
+}
+header .inner-header nav#nav-menu #close-nav {
+  position: absolute;
+  display: none;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+@media screen and (max-width: 770px) {
+  header .inner-header nav#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    background: #f7a06e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+  }
+  header .inner-header nav#nav-menu #close-nav {
+    display: block;
+  }
+  header .inner-header nav#nav-menu #close-nav {
+    position: absolute;
+  }
+  header .inner-header nav#nav-menu ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  header .inner-header nav#nav-menu ul li {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  header .inner-header nav#nav-menu.active {
+    right: 0;
+  }
+}
+header .inner-header #hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+header .inner-header #hamburger-menu img {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 770px) {
+  header .inner-header #hamburger-menu {
+    display: block;
+  }
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 8;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#overlay.active {
+  display: block;
+}
+
 main .big-wallpaper {
   width: 100%;
   height: 100%;
@@ -43,17 +153,6 @@ main .big-wallpaper {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-main .big-wallpaper .tam-logo {
-  position: absolute;
-  top: 60px;
-  left: 60px;
-  width: 100px;
-  height: 100px;
-  color: orange;
-}
-main .big-wallpaper .tam-logo a img {
-  width: 100%;
 }
 main .big-wallpaper .big-wallpaper-div {
   width: 50%;
@@ -91,16 +190,6 @@ main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button:hover {
 }
 
 @media screen and (max-width: 430px) {
-  .big-wallpaper .tam-logo {
-    position: absolute;
-    top: 20px !important;
-    left: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-  }
-  .big-wallpaper .tam-logo a img {
-    width: 100%;
-  }
   .big-wallpaper .big-wallpaper-div {
     width: 100% !important;
     text-align: center;
