@@ -1,17 +1,3 @@
 [
-    {
-        "id":1,
-        "src": "assets/img/image1.jpg",
-        "alt": "slika1"
-    },
-    {
-        "id":2,
-        "src": "assets/img/image2.jpg",
-        "alt": "slika2"
-    },
-    {
-        "id":3,
-        "src": "assets/img/image3.jpg",
-        "alt": "slika3"
-    }
+    
 ]

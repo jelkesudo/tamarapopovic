@@ -1,14 +1,23 @@
-/* Universal box-sizing for consistency */
+@charset "UTF-8";
+@font-face {
+  font-family: "site-font";
+  src: url("../fonts/NotoSans-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html, body, main {
   height: 100%;
   overflow-x: hidden;
-  font-family: Arial, sans-serif;
+  font-family: "site-font";
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 ::-webkit-scrollbar {
@@ -25,127 +34,94 @@ html, body {
   background: #aaa;
 }
 
-.carousel-container {
+main .big-wallpaper {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  background: url("../img/nema-ime-fuck/10 Slobodni portfolio_drugi semestar_Tamara Popović.jpg") no-repeat center center;
+  background-size: cover;
   position: relative;
-}
-
-.image-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  animation: fadeIn 9s infinite;
-}
-
-.carousel-image:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.carousel-image:nth-child(2) {
-  animation-delay: 3s;
-}
-
-.carousel-image:nth-child(3) {
-  animation-delay: 6s;
-}
-
-@keyframes fadeIn {
-  0%, 22%, 100% {
-    opacity: 0;
-  }
-  11%, 22% {
-    opacity: 1;
-  }
-}
-.carousel-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
-
-.overlay-content {
-  padding-left: 50px;
-  color: white;
+main .big-wallpaper .tam-logo {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+  color: orange;
 }
-
-.overlay-content h1 {
-  margin: 0;
-  font-size: 2em;
+main .big-wallpaper .tam-logo a img {
+  width: 100%;
 }
-
-.overlay-content p {
-  margin: 0;
-  font-size: 1em;
+main .big-wallpaper .big-wallpaper-div {
+  width: 50%;
+  text-align: center;
 }
-
-.w-80 {
-  width: 80%;
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-text {
+  width: 100%;
+}
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-text h1 {
+  font-size: 3em;
+}
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-text h3 {
+  font-size: 1.5em;
+}
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons {
+  width: 90%;
   margin: 0px auto;
-}
-
-.additional-content {
-  padding: 20px;
-  background: none;
-}
-
-.gallery {
+  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.gallery .galleryImage {
-  width: 30%;
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
+  background-color: rgb(147, 168, 197);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
 }
-.gallery .galleryImage img {
-  width: 100%;
+main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button:hover {
+  background-color: rgb(78, 96, 121);
+  color: white;
 }
 
-@media (max-width: 768px) {
-  .carousel-container {
-    background-image: url("../img/image3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@media screen and (max-width: 430px) {
+  .big-wallpaper .tam-logo {
+    position: absolute;
+    top: 20px !important;
+    left: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
   }
-  .image-container {
-    display: none;
-  }
-  .carousel-overlay {
-    justify-content: center;
-  }
-  .overlay-content {
-    padding-left: 0px;
-    text-align: center;
-  }
-  .additional-content {
-    text-align: center;
-  }
-  .additional-content p {
-    margin-top: 20px;
-  }
-  .gallery .galleryImage {
+  .big-wallpaper .tam-logo a img {
     width: 100%;
   }
-  .gallery .galleryImage img {
+  .big-wallpaper .big-wallpaper-div {
+    width: 100% !important;
+    text-align: center;
+  }
+  .big-wallpaper .big-wallpaper-div .big-wallpaper-text {
     width: 100%;
+  }
+  .big-wallpaper .big-wallpaper-div .big-wallpaper-text h1 {
+    font-size: 2.5em !important;
+  }
+  .big-wallpaper .big-wallpaper-div .big-wallpaper-text h3 {
+    font-size: 1em !important;
+  }
+  .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
+    margin: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
