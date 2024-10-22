@@ -13,6 +13,7 @@ html, body, main {
   height: 100%;
   overflow-x: hidden;
   font-family: "site-font";
+  background-color: rgb(253, 211, 161);
 }
 
 a {
@@ -22,6 +23,14 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-bottom-20 {
+  margin-top: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -188,7 +197,61 @@ main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button:hover {
   background-color: rgb(78, 96, 121);
   color: white;
 }
+main .full-height {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .responsive-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 60%;
+  margin: 0px auto;
+  height: 100vh;
+}
+main .text-content, main .image-content {
+  width: 48%;
+}
+main .text-content h1 {
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+main .text-content p {
+  font-size: 1.2rem;
+}
+main .image-content img {
+  max-width: 100%;
+  height: auto;
+}
+main .section2 {
+  background-color: lightgreen;
+}
+main .section3 {
+  background-color: lightcoral;
+}
 
+@media screen and (max-width: 770px) {
+  .responsive-section {
+    flex-direction: column;
+    width: 100% !important;
+    height: auto;
+  }
+  .text-content, .image-content {
+    width: 100% !important;
+  }
+  .text-content img, .image-content img {
+    width: 100%;
+  }
+  .text-content {
+    order: 2;
+  }
+  .image-content {
+    order: 1;
+  }
+}
 @media screen and (max-width: 430px) {
   .big-wallpaper .big-wallpaper-div {
     width: 100% !important;
