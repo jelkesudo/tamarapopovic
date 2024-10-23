@@ -19,6 +19,7 @@ html, body, main {
   overflow-x: hidden;
   font-family: "site-font";
   background-color: $pozadina;
+  scroll-behavior: smooth;
 }
 
 a{
@@ -38,8 +39,13 @@ ul{
   margin-top: 10px;
 }
 
+.hidden-div {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
+  display: none;
   background: transparent; 
 }
 
@@ -51,6 +57,7 @@ ul{
 ::-webkit-scrollbar-thumb:hover {
   background: #aaa; 
 }
+
 header {
   width: 100%;
   position: fixed;
@@ -65,7 +72,6 @@ header {
 
     nav#nav-menu { 
       width: 30%;
-
       ul {
         margin-top: 20px;
         display: flex;
@@ -113,7 +119,7 @@ header {
         justify-content: center;
         align-items: center;
         transition: right 0.3s ease-in-out;
-        #close-nav{
+        #close-nav {
           position: absolute;
         }
         ul {
@@ -133,7 +139,7 @@ header {
       }
     }
 
-    #hamburger-menu {  // Updated hamburger selector with id
+    #hamburger-menu {
       display: none;
       cursor: pointer;
 
@@ -148,6 +154,7 @@ header {
     }
   }
 }
+
 #overlay {
   position: fixed;
   top: 0;
@@ -159,61 +166,77 @@ header {
   display: none; 
   transition: opacity 0.3s ease-in-out;
 }
+
 #overlay.active {
   display: block;
 }
-main{
-  .big-wallpaper{
-    width: 100%;
-    height: 100%;
-    background: url("../img/nema-ime-fuck/10 Slobodni portfolio_drugi semestar_Tamara Popović.jpg") no-repeat center center;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .big-wallpaper-div{
-      width: 50%;
-      text-align: center;
-      .big-wallpaper-text{
-        width: 100%;
-        h1{
-          font-size: 3em;
-        }
-        h3{
-          font-size: 1.5em;
-        }
+
+
+.big-wallpaper {
+  width: 100%;
+  height: 100vh; 
+  background: url("../img/nema-ime-fuck/10 Slobodni portfolio_drugi semestar_Tamara Popović.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+
+  .big-wallpaper-div {
+    width: 50%;
+    text-align: center;
+
+    .big-wallpaper-text {
+      width: 100%;
+      h1 {
+        font-size: 3em;
       }
-      .big-wallpaper-buttons{
-        width: 90%;
-        margin: 0px auto;
-        margin-top: 60px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        button{
-          background-color: $bojaSajta;
-          border: none;
-          padding: 10px 30px;
-          border-radius: 20px;
-          font-weight: bold;
-          transition: 0.5s;
-          cursor: pointer;
-          &:hover{
-            background-color: rgb(78, 96, 121);
-            color: $white;
-          }
+      h3 {
+        font-size: 1.5em;
+      }
+    }
+
+    .big-wallpaper-buttons {
+      width: 90%;
+      margin: 0px auto;
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      button {
+        background-color: $bojaSajta;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(78, 96, 121);
+          color: $white;
         }
       }
     }
-    
   }
+}
+
+
+main {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+
   .full-height {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start;
   }
+
   .responsive-section {
     display: flex;
     justify-content: space-between;
@@ -221,42 +244,136 @@ main{
     padding: 20px;
     width: 60%;
     margin: 0px auto;
-    height: 100vh; 
+    height: 100vh;
+    scroll-snap-align: start;
   }
+
   .text-content, .image-content {
-    width: 48%; 
+    width: 48%;
   }
+
   .text-content h1 {
     font-size: 2rem;
     padding-bottom: 20px;
   }
+
   .text-content p {
     font-size: 1.2rem;
   }
+
   .image-content img {
     max-width: 100%;
     height: auto;
   }
+
   .section2 {
-    background-color: lightgreen;
+      .carousel {
+          position: relative;
+          width: 80%;
+          max-width: 1000px;
+          margin: 0 auto;
+          overflow: hidden;
+
+          .carousel-images {
+              display: flex;
+              transition: transform 0.5s ease;
+          }
+
+          .carousel-image {
+              min-width: 100%;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+
+              &.active {
+                  opacity: 1;
+              }
+
+              img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+              }
+          }
+
+          .arrow-container {
+              display: flex;
+              justify-content: center;
+              margin-top: 10px;
+
+              .carousel-arrow {
+                  background-color: rgba(255, 255, 255, 0.8);
+                  border: none;
+                  padding: 5px;
+                  cursor: pointer;
+                  font-size: 24px;
+                  width: 40px;
+                  height: 40px;
+                  margin: 0 10px;
+
+                  @media (max-width: 770px) {
+                    display: none;
+                  }
+              }
+          }
+          .dot-container {
+              display: flex;
+              justify-content: center;
+              margin-top: 10px; 
+          }
+          
+          .dot {
+              height: 10px;
+              width: 10px;
+              margin: 0 5px;
+              background-color: lightgray; 
+              border-radius: 50%;
+              display: inline-block;
+          }
+          
+          .dot.active {
+              background-color: #333; 
+          }
+      }
+
+      // Responsive styles
+      @media screen and (max-width: 770px) {
+          .carousel {
+              width: 90%; // Wider on smaller screens
+          }
+      }
+
+      @media screen and (max-width: 430px) {
+          .carousel {
+              width: 95%; // Full width on extra small screens
+          }
+      }
   }
+
   .section3 {
     background-color: lightcoral;
   }
 }
 
 @media screen and (max-width: 770px) {
+  main {
+    scroll-snap-type: none;
+  }
+
+  .hidden-div {
+    display: block !important;
+  }
+
   .responsive-section {
-    flex-direction: column; 
+    flex-direction: column;
     width: 100% !important;
-    height: auto; 
+    height: auto;
   }
 
   .text-content, .image-content {
     width: 100% !important;
-    img{
+    img {
       width: 100%;
-    } 
+    }
   }
 
   .text-content {
@@ -264,36 +381,54 @@ main{
   }
 
   .image-content {
-    order: 1; 
+    order: 1;
+  }
+
+  .carousel {
+    width: 90%; 
+  }
+
+  .arrow-container {
+      width: 60px;
   }
 }
 
-
 @media screen and (max-width: 430px) {
-  .big-wallpaper{
-    .big-wallpaper-div{
+  .big-wallpaper {
+    .big-wallpaper-div {
       width: 100% !important;
       text-align: center;
-      .big-wallpaper-text{
+
+      .big-wallpaper-text {
         width: 100%;
-        h1{
+
+        h1 {
           font-size: 2.5em !important;
         }
-        h3{
+
+        h3 {
           font-size: 1em !important;
         }
       }
-      .big-wallpaper-buttons{
+
+      .big-wallpaper-buttons {
         width: 90%;
         margin: 0px auto;
         margin-top: 60px;
         display: flex;
         justify-content: space-around;
-        button{
+
+        button {
           margin: 10px;
         }
       }
     }
-    
+  }
+  .carousel {
+      width: 95%;
+  }
+
+  .arrow-container {
+      width: 70px;
   }
 }

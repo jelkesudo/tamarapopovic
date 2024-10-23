@@ -14,6 +14,7 @@ html, body, main {
   overflow-x: hidden;
   font-family: "site-font";
   background-color: rgb(253, 211, 161);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -33,8 +34,13 @@ ul {
   margin-top: 10px;
 }
 
+.hidden-div {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
+  display: none;
   background: transparent;
 }
 
@@ -153,30 +159,31 @@ header .inner-header #hamburger-menu img {
   display: block;
 }
 
-main .big-wallpaper {
+.big-wallpaper {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("../img/nema-ime-fuck/10 Slobodni portfolio_drugi semestar_Tamara Popović.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
 }
-main .big-wallpaper .big-wallpaper-div {
+.big-wallpaper .big-wallpaper-div {
   width: 50%;
   text-align: center;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-text {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-text {
   width: 100%;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-text h1 {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-text h1 {
   font-size: 3em;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-text h3 {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-text h3 {
   font-size: 1.5em;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-buttons {
   width: 90%;
   margin: 0px auto;
   margin-top: 60px;
@@ -184,7 +191,7 @@ main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
   background-color: rgb(147, 168, 197);
   border: none;
   padding: 10px 30px;
@@ -193,15 +200,22 @@ main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
   transition: 0.5s;
   cursor: pointer;
 }
-main .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button:hover {
+.big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button:hover {
   background-color: rgb(78, 96, 121);
   color: white;
+}
+
+main {
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 main .full-height {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
 }
 main .responsive-section {
   display: flex;
@@ -211,6 +225,7 @@ main .responsive-section {
   width: 60%;
   margin: 0px auto;
   height: 100vh;
+  scroll-snap-align: start;
 }
 main .text-content, main .image-content {
   width: 48%;
@@ -226,14 +241,88 @@ main .image-content img {
   max-width: 100%;
   height: auto;
 }
-main .section2 {
-  background-color: lightgreen;
+main .section2 .carousel {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+main .section2 .carousel .carousel-images {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+main .section2 .carousel .carousel-image {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+main .section2 .carousel .carousel-image.active {
+  opacity: 1;
+}
+main .section2 .carousel .carousel-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .section2 .carousel .arrow-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+main .section2 .carousel .arrow-container .carousel-arrow {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+@media (max-width: 770px) {
+  main .section2 .carousel .arrow-container .carousel-arrow {
+    display: none;
+  }
+}
+main .section2 .carousel .dot-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+main .section2 .carousel .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: lightgray;
+  border-radius: 50%;
+  display: inline-block;
+}
+main .section2 .carousel .dot.active {
+  background-color: #333;
+}
+@media screen and (max-width: 770px) {
+  main .section2 .carousel {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 430px) {
+  main .section2 .carousel {
+    width: 95%;
+  }
 }
 main .section3 {
   background-color: lightcoral;
 }
 
 @media screen and (max-width: 770px) {
+  main {
+    scroll-snap-type: none;
+  }
+  .hidden-div {
+    display: block !important;
+  }
   .responsive-section {
     flex-direction: column;
     width: 100% !important;
@@ -250,6 +339,12 @@ main .section3 {
   }
   .image-content {
     order: 1;
+  }
+  .carousel {
+    width: 90%;
+  }
+  .arrow-container {
+    width: 60px;
   }
 }
 @media screen and (max-width: 430px) {
@@ -275,5 +370,11 @@ main .section3 {
   }
   .big-wallpaper .big-wallpaper-div .big-wallpaper-buttons button {
     margin: 10px;
+  }
+  .carousel {
+    width: 95%;
+  }
+  .arrow-container {
+    width: 70px;
   }
 }/*# sourceMappingURL=style.css.map */
