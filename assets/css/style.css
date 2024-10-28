@@ -9,7 +9,9 @@
   box-sizing: border-box;
 }
 
-html, body, main {
+html,
+body,
+main {
   height: 100%;
   overflow-x: hidden;
   font-family: "site-font";
@@ -132,8 +134,6 @@ header .inner-header nav#nav-menu #close-nav {
 header .inner-header #hamburger-menu {
   display: none;
   cursor: pointer;
-}
-header .inner-header #hamburger-menu img {
   width: 30px;
   height: 30px;
 }
@@ -227,7 +227,8 @@ main .responsive-section {
   height: 100vh;
   scroll-snap-align: start;
 }
-main .text-content, main .image-content {
+main .text-content,
+main .image-content {
   width: 48%;
 }
 main .text-content h1 {
@@ -248,23 +249,58 @@ main .section2 .carousel {
   margin: 0 auto;
   overflow: hidden;
 }
+main .section2 .carousel .carousel-heading {
+  padding: 20px 0px;
+}
 main .section2 .carousel .carousel-images {
   display: flex;
   transition: transform 0.5s ease;
 }
-main .section2 .carousel .carousel-image {
+main .section2 .carousel .carousel-images .carousel-image {
   min-width: 100%;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-main .section2 .carousel .carousel-image.active {
+main .section2 .carousel .carousel-images .carousel-image.active {
   opacity: 1;
 }
-main .section2 .carousel .carousel-image img {
+main .section2 .carousel .carousel-images .carousel-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+main .section2 .carousel .carousel-images .carousel-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .section2 .carousel .carousel-images .carousel-overlay .carousel-content {
+  width: 80%;
+  text-align: center;
+  color: white;
+}
+main .section2 .carousel .carousel-images .carousel-overlay .carousel-content .carousel-button {
+  margin-top: 15px;
+}
+main .section2 .carousel .carousel-images .carousel-overlay .carousel-content .carousel-button button {
+  background-color: rgb(147, 168, 197);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+  cursor: pointer;
+}
+main .section2 .carousel .carousel-images .carousel-overlay .carousel-content .carousel-button button:hover {
+  background-color: rgb(78, 96, 121);
+  color: white;
 }
 main .section2 .carousel .arrow-container {
   display: flex;
@@ -274,12 +310,12 @@ main .section2 .carousel .arrow-container {
 main .section2 .carousel .arrow-container .carousel-arrow {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
-  padding: 5px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
   width: 40px;
   height: 40px;
   margin: 0 10px;
+  border-radius: 15px;
 }
 @media (max-width: 770px) {
   main .section2 .carousel .arrow-container .carousel-arrow {
@@ -326,12 +362,14 @@ main .section3 {
   .responsive-section {
     flex-direction: column;
     width: 100% !important;
-    height: auto;
+    height: 100vh;
   }
-  .text-content, .image-content {
+  .text-content,
+  .image-content {
     width: 100% !important;
   }
-  .text-content img, .image-content img {
+  .text-content img,
+  .image-content img {
     width: 100%;
   }
   .text-content {

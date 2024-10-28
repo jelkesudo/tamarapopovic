@@ -1,5 +1,5 @@
 window.onload = function(){
-    
+    console.log("Screen width:", window.innerWidth);
     $("#hamburger-menu").on('click', (e) => {
         e.stopPropagation();
         $("#nav-menu").addClass("active");
@@ -44,8 +44,23 @@ function printImages(data){
     for (let index = 0; index < data.length; index++) {
         const d = data[index];
         console.log(d);
-        html += `<div class="carousel-image">
-                        <img src="${d.src}" alt="${d.alt}"/>
+        html += `<div class="carousel-item active">
+                        <div class="carousel-image">
+                            <img src="${d.src}" alt="${d.alt}"/>
+                        </div>
+                        <div class="carousel-overlay">
+                            <div class="carousel-content">
+                                <div class="carousel-heading">
+                                    <h3>Ime projekta</h3>
+                                </div>
+                                <div class="carousel-text">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, ipsum deleniti repudiandae a molestias fugit consequatur, saepe consequuntur nulla laudantium commodi repellat praesentium asperiores aut atque, accusamus autem harum dicta.</p>
+                                </div>
+                                <div class="carousel-button">
+                                    <button>Go to project</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>`;
 
         dotHtml += `<span class="dot" data-index="${index}"></span>`;
