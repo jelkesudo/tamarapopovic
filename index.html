@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Tamara Popovic</title>
 </head>
+
 <body>
     <header>
         <div class="inner-header">
@@ -15,7 +18,7 @@
             <nav id="nav-menu">
                 <div id="close-nav">&times;</div>
                 <ul>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#">Contacts</a></li>
                 </ul>
             </nav>
@@ -34,7 +37,7 @@
                 </div>
                 <div class="big-wallpaper-buttons">
                     <div class="div-button">
-                        <a href="#">
+                        <a href="#projects">
                             <button>
                                 Projects
                             </button>
@@ -50,33 +53,46 @@
                 </div>
             </div>
         </div>
+        <section id="projects" class="full-height responsive-section d-flex flex-column">
+            <div>
+                <h2>Projects</h2>
+            </div>
+            <div class="carousel-bootstrap w-100">
+                <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div id="imagePrint" class="carousel-inner"></div>
+                </div>
+            </div>
+        </section>
         <section class="full-height responsive-section">
             <div class="text-content">
-                <h1>Tamara Popovic</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut accumsan neque, sit amet maximus risus. Nunc est turpis, rhoncus ut scelerisque id, pharetra at magna. Nam efficitur augue enim, non congue augue commodo ac. Donec id diam mattis, dapibus leo ac, hendrerit urna. Ut et risus et est iaculis tincidunt in a tellus. Quisque vitae volutpat purus. Duis sagittis, purus vitae viverra luctus, dui velit gravida felis, sed auctor nunc massa mollis augue. Maecenas sit amet rhoncus magna, vel iaculis augue. Phasellus ullamcorper magna non enim vehicula imperdiet. Aenean congue lacus quis sem luctus posuere. Suspendisse elementum elit purus, lacinia fermentum sem pulvinar eget. Curabitur interdum mi nibh, non imperdiet libero suscipit consequat. Sed sit amet dolor nulla.</p>
+                <h2>Tamara Popovic</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut accumsan neque, sit amet maximus
+                    risus. Nunc est turpis, rhoncus ut scelerisque id, pharetra at magna. Nam efficitur augue enim, non
+                    congue augue commodo ac. Donec id diam mattis, dapibus leo ac, hendrerit urna. Ut et risus et est
+                    iaculis tincidunt in a tellus. Quisque vitae volutpat purus. Duis sagittis, purus vitae viverra
+                    luctus, dui velit gravida felis, sed auctor nunc massa mollis augue. Maecenas sit amet rhoncus
+                    magna, vel iaculis augue. Phasellus ullamcorper magna non enim vehicula imperdiet. Aenean congue
+                    lacus quis sem luctus posuere. Suspendisse elementum elit purus, lacinia fermentum sem pulvinar
+                    eget. Curabitur interdum mi nibh, non imperdiet libero suscipit consequat. Sed sit amet dolor nulla.
+                </p>
             </div>
             <div class="image-content text-center">
-              <img src="https://picsum.photos/400" alt="Placeholder image">
+                <img src="https://picsum.photos/400" alt="Placeholder image">
             </div>
         </section>
-        <section class="full-height section2 responsive-section">
-            <div class="carousel">
-                <div class="text-center carousel-heading">
-                    <h2>Projects</h2>
-                </div>
-                <div class="carousel-images">
-                    
-                </div>
-                <div id="dotPrint" class="dot-container">
-                </div>
-                <div class="arrow-container">
-                    <button class="carousel-arrow" id="left-arrow">❮</button>
-                    <button class="carousel-arrow" id="right-arrow">❯</button>
-                </div>
-            </div>
-        </section>
+        
     </main>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
+
 </html>
