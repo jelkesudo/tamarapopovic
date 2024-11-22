@@ -2,16 +2,103 @@
     {
         "id": 1,
         "src": "assets/img/nas-razred/14-tamara-popovic-pozoriste-67362e62d418e.webp",
-        "alt": "TamaraPopović_pozorište.webp"
+        "alt": "14-tamara-popovic-pozoriste-67362e62d418e.webp",
+        "parentId": 1
     },
     {
         "id": 2,
         "src": "assets/img/nas-razred/16-tamara-popovic-pozoriste-67362e6e178b1.webp",
-        "alt": "TamaraPopović_pozorište.webp"
+        "alt": "16-tamara-popovic-pozoriste-67362e6e178b1.webp",
+        "parentId": 1
     },
     {
         "id": 3,
         "src": "assets/img/nas-razred/17-tamara-popovic-pozoriste-67362e707247a.webp",
-        "alt": "TamaraPopović_pozorište.webp"
+        "alt": "17-tamara-popovic-pozoriste-67362e707247a.webp",
+        "parentId": 1
+    },
+    {
+        "id": 4,
+        "src": "assets/img/nas-razred/23-tamara-popovic-pozoriste-67362e75273c8.webp",
+        "alt": "23-tamara-popovic-pozoriste-67362e75273c8.webp",
+        "parentId": 1
+    },
+    {
+        "id": 5,
+        "src": "assets/img/nas-razred/24-tamara-popovic-pozoriste-67362e79f338a.webp",
+        "alt": "24-tamara-popovic-pozoriste-67362e79f338a.webp",
+        "parentId": 1
+    },
+    {
+        "id": 6,
+        "src": "assets/img/nas-razred/27-tamara-popovic-pozoriste-67362e7ba26f2.webp",
+        "alt": "27-tamara-popovic-pozoriste-67362e7ba26f2.webp",
+        "parentId": 1
+    },
+    {
+        "id": 7,
+        "src": "assets/img/nas-razred/28-tamara-popovic-pozoriste-67362e620cafc.webp",
+        "alt": "28-tamara-popovic-pozoriste-67362e620cafc.webp",
+        "parentId": 1
+    },
+    {
+        "id": 8,
+        "src": "assets/img/nema-ime-fuck/01-slobodni-portfolio-drugi-semestar-tamara-popovic-67362e9fcb58f.webp",
+        "alt": "01-slobodni-portfolio-drugi-semestar-tamara-popovic-67362e9fcb58f.webp",
+        "parentId": 2
+    },
+    {
+        "id": 9,
+        "src": "assets/img/nema-ime-fuck/02-slobodni-portfolio-drugi-semestar-tamara-popovic-67362ea3f28ca.webp",
+        "alt": "02-slobodni-portfolio-drugi-semestar-tamara-popovic-67362ea3f28ca.webp",
+        "parentId": 2
+    },
+    {
+        "id": 10,
+        "src": "assets/img/nema-ime-fuck/03 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "alt": "03 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "parentId": 2
+    },
+    {
+        "id": 11,
+        "src": "assets/img/nema-ime-fuck/04 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "alt": "04 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "parentId": 2
+    },
+    {
+        "id": 12,
+        "src": "assets/img/nema-ime-fuck/10 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "alt": "10 Slobodni portfolio_drugi semestar_Tamara Popović.png",
+        "parentId": 2
+    },
+    {
+        "id": 13,
+        "src": "assets/img/nemam-ime-projekta-za-sad/sesfewsfwf.png",
+        "alt": "sesfewsfwf.png",
+        "parentId": 3
+    },
+    {
+        "id": 14,
+        "src": "assets/img/nemam-ime-projekta-za-sad/untitled-4468 2.png",
+        "alt": "untitled-4468 2.png",
+        "parentId": 3
+    },
+    {
+        "id": 15,
+        "src": "assets/img/nemam-ime-projekta-za-sad/untitled-4597.png",
+        "alt": "untitled-4597.png",
+        "parentId": 3
+    },
+    {
+        "id": 16,
+        "src": "assets/img/nemam-ime-projekta-za-sad/untitled-4601.png",
+        "alt": "untitled-4601.png",
+        "parentId": 3
+    },
+    {
+        "id": 17,
+        "src": "assets/img/nemam-ime-projekta-za-sad/untitled-4613.png",
+        "alt": "untitled-4613.png",
+        "parentId": 3
     }
 ]
