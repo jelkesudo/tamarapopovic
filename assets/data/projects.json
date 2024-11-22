@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Nas Razred",
+        "picture": "assets/img/nas-razred/14-tamara-popovic-pozoriste-67362e62d418e.webp",
+        "desc": "Opis prvog"
+    },
+    {
+        "id": 2,
+        "name": "Drugi projekat",
+        "picture": "assets/img/nema-ime-fuck/02-slobodni-portfolio-drugi-semestar-tamara-popovic-67362ea3f28ca.webp",
+        "desc": "Opis drugog"
+    },
+    {
+        "id": 3,
+        "name": "Treci projekat",
+        "picture": "assets/img/nemam-ime-projekta-za-sad/sesfewsfwf.png",
+        "desc": "Opis treceg"
+    }
+]
